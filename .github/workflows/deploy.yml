@@ -1,0 +1,60 @@
+name: Build and Deploy Basilisk Docs
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Rebuild weekly (Monday 6am UTC) to pick up Basilisk updates
+    - cron: '0 6 * * 1'
+  workflow_dispatch:  # manual trigger
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz python3
+
+      - name: Download Basilisk source
+        run: |
+          curl -sL http://basilisk.fr/basilisk/basilisk.tar.gz | tar xz
+          test -f basilisk/src/common.h
+
+      - name: Build Doxygen API reference
+        run: doxygen Doxyfile
+
+      - name: Build literate documentation
+        run: |
+          python3 generate_literate_site.py \
+            --src basilisk/src \
+            --doxygen-html output/html \
+            --out output/literate
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

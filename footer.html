@@ -1,0 +1,34 @@
+<!-- HTML footer for doxygen 1.16.1-->
+<!-- start footer part -->
+<script>
+// Link back to literate page for the current file (only if page exists)
+(function() {
+  var pages = new Set(['advection.html','all-mach.html','axi.html','bcg.html','common.html','compressible_thermal.html','compressible_two-phase.html','compressible.html','conservation.html','contact.html','curvature.html','diffusion.html','discharge.html','distance.html','draw.html','ehd_implicit.html','ehd_pnp.html','ehd_stress.html','elevation.html','embed-tree.html','embed.html','fene-p.html','fractions.html','gauges.html','green-naghdi.html','grid_boundaries.html','grid_cartesian-common.html','grid_events.html','grid_multigrid-mpi.html','grid_multigrid.html','grid_octree.html','grid_quadtree.html','grid_tree-common.html','grid_tree-mpi.html','harmonic.html','heights.html','hele-shaw.html','henry.html','hessenberg.html','iforce.html','input.html','integral.html','lambda2.html','layered_hydro.html','layered_nh.html','layered_perfs.html','layered_remap.html','log-conform.html','maxruntime.html','momentum.html','multilayer.html','navier-stokes_centered.html','navier-stokes_mac.html','navier-stokes_stream.html','navier-stokes_swirl.html','no-coalescence.html','okada.html','output.html','perfs.html','poisson.html','predictor-corrector.html','radial.html','redistance.html','reduced.html','run.html','runge-kutta.html','saint-venant-implicit.html','saint-venant.html','solve.html','spherical.html','spherisym.html','tag.html','tension.html','terrain.html','timestep.html','tracer.html','two-phase-clsvof.html','two-phase-generic.html','two-phase-levelset.html','two-phase.html','utils.html','view.html','viscosity-embed.html','viscosity.html','vof.html','vtk.html']);
+  var title = document.title || '';
+  var m = title.match(/([\w\/\-]+\.[hc])\s+File Reference/);
+  if (!m) return;
+  var fname = m[1].replace(/\//g, '_').replace(/\.h$/, '.html').replace(/\.c$/, '.html');
+  if (!pages.has(fname)) return;
+  var link = document.createElement('div');
+  link.style.cssText = 'background:#e3f2fd;padding:8px 16px;font-size:14px;border-bottom:1px solid #90caf9;';
+  link.innerHTML = '📖 <a href="../literate/' + fname + '">View literate documentation for this file</a> (prose + equations)';
+  var content = document.getElementById('doc-content') || document.body;
+  content.insertBefore(link, content.firstChild);
+})();
+</script>
+<!--BEGIN GENERATE_TREEVIEW-->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    $navpath
+    <li class="footer">$generatedby <a href="https://www.doxygen.org/index.html"><img class="footer" src="$relpath^doxygen.svg" width="104" height="31" alt="doxygen"/></a> $doxygenversion </li>
+  </ul>
+</div>
+<!--END GENERATE_TREEVIEW-->
+<!--BEGIN !GENERATE_TREEVIEW-->
+<hr class="footer"/><address class="footer"><small>
+$generatedby&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="$relpath^doxygen.svg" width="104" height="31" alt="doxygen"/></a> $doxygenversion
+</small></address>
+</div><!-- doc-content -->
+<!--END !GENERATE_TREEVIEW-->
+</body>
+</html>

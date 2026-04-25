@@ -1,0 +1,165 @@
+/**
+ * @defgroup solvers Solvers
+ * @brief PDE solvers for fluid dynamics and related problems
+ *
+ * This group contains the main solver modules in Basilisk:
+ * Navier–Stokes, Saint-Venant, Poisson, advection, diffusion,
+ * compressible flows, electrohydrodynamics, and viscoelasticity.
+ */
+
+/**
+ * @defgroup ns Navier–Stokes Solvers
+ * @ingroup solvers
+ * @brief Incompressible Navier–Stokes solvers
+ *
+ * Centered, MAC, and stream-function formulations.
+ * - navier-stokes/centered.h — Projection method (Chorin/BCG)
+ * - navier-stokes/mac.h — Marker-and-Cell staggered grid
+ * - navier-stokes/stream.h — Streamfunction–vorticity
+ */
+
+/**
+ * @defgroup shallow Saint-Venant / Shallow Water
+ * @ingroup solvers
+ * @brief Shallow water and multilayer solvers
+ *
+ * - saint-venant.h — Explicit Godunov-type scheme
+ * - saint-venant-implicit.h — Semi-implicit variant
+ * - multilayer.h — Multiple-layer shallow water
+ * - green-naghdi.h — Dispersive (Green–Naghdi) extension
+ */
+
+/**
+ * @defgroup layered Multilayer Solvers
+ * @ingroup solvers
+ * @brief Free-surface multilayer Navier–Stokes
+ *
+ * The layered/ directory implements the non-hydrostatic multilayer
+ * equations with a free surface.
+ * - layered/hydro.h — Hydrostatic multilayer
+ * - layered/nh.h — Non-hydrostatic extension
+ * - layered/remap.h — Vertical remapping
+ */
+
+/**
+ * @defgroup compressible Compressible Flow Solvers
+ * @ingroup solvers
+ * @brief Compressible and all-Mach number solvers
+ *
+ * - compressible.h — Compressible Euler equations
+ * - all-mach.h — All-Mach number formulation
+ * - compressible/two-phase.h — Two-phase compressible
+ * - compressible/thermal.h — Thermal effects
+ */
+
+/**
+ * @defgroup elliptic Elliptic Solvers
+ * @ingroup solvers
+ * @brief Multigrid Poisson/Helmholtz and general linear solvers
+ *
+ * - poisson.h — Multigrid Poisson–Helmholtz solver
+ * - solve.h — General spatial linear systems
+ * - viscosity.h — Implicit viscosity (uses Poisson solver)
+ * - diffusion.h — Implicit reaction–diffusion
+ */
+
+/**
+ * @defgroup ehd Electrohydrodynamics
+ * @ingroup solvers
+ * @brief Electric field and charge transport
+ *
+ * - ehd/implicit.h — Ohmic conduction
+ * - ehd/pnp.h — Poisson–Nernst–Planck
+ * - ehd/stress.h — Maxwell stress tensor
+ */
+
+/**
+ * @defgroup visco Viscoelasticity
+ * @ingroup solvers
+ * @brief Viscoelastic constitutive models
+ *
+ * - log-conform.h — Log-conformation method (Oldroyd-B, FENE-P, etc.)
+ * - fene-p.h — FENE-P model
+ */
+
+/**
+ * @defgroup grid Grid System
+ * @brief Adaptive Cartesian mesh infrastructure
+ *
+ * The grid/ directory provides the mesh data structures and iterators:
+ * - grid/cartesian-common.h — Common Cartesian grid operations
+ * - grid/multigrid.h — Non-adaptive multigrid
+ * - grid/quadtree.h — 2D adaptive quadtree
+ * - grid/octree.h — 3D adaptive octree
+ * - grid/tree-common.h — Common tree operations
+ * - grid/tree-mpi.h — MPI parallelism for tree grids
+ * - grid/events.h — Event scheduling system
+ * - grid/boundaries.h — Boundary condition infrastructure
+ */
+
+/**
+ * @defgroup interface Interface Tracking
+ * @brief Volume-of-Fluid and level-set methods
+ *
+ * - vof.h — VOF advection
+ * - fractions.h — VOF fraction computation and interface reconstruction
+ * - curvature.h — Interface curvature via height functions
+ * - heights.h — Height-function computation
+ * - contact.h — Contact angle boundary conditions
+ * - two-phase.h — Two-phase flow setup
+ * - no-coalescence.h — Preventing interface coalescence
+ */
+
+/**
+ * @defgroup surface Interfacial Forces
+ * @brief Surface tension, reduced gravity, and related forces
+ *
+ * - iforce.h — Generic interfacial force
+ * - tension.h — Surface tension (CSF method)
+ * - reduced.h — Reduced gravity formulation
+ * - integral.h — Surface tension (integral formulation)
+ */
+
+/**
+ * @defgroup io Input / Output
+ * @brief File I/O, visualisation output, and data export
+ *
+ * - output.h — PPM, GFS, dump, matrix, GRD output
+ * - input.h — GFS, GRD, PGM input
+ * - vtk.h — VTK format output
+ * - view.h — Basilisk View rendering
+ * - draw.h — Drawing primitives for Basilisk View
+ */
+
+/**
+ * @defgroup utils Utilities
+ * @brief Helper functions, statistics, and data processing
+ *
+ * - utils.h — Field statistics, slope limiters, interpolation
+ * - tag.h — Connected-component tagging
+ * - harmonic.h — Harmonic decomposition
+ * - lambda2.h — Lambda-2 vortex criterion
+ * - distance.h — Signed distance field
+ * - redistance.h — Distance field redistancing
+ */
+
+/**
+ * @defgroup core Core Infrastructure
+ * @brief Fundamental types, macros, and runtime
+ *
+ * - common.h — Core types (scalar, vector, tensor, coord, Grid, _Attributes)
+ * - run.h — Main time loop and event dispatcher
+ * - timestep.h — CFL-based timestep computation
+ * - predictor-corrector.h — Generic predictor–corrector framework
+ * - bcg.h — Bell–Colella–Glaz advection scheme
+ */
+
+/**
+ * @defgroup metrics Coordinate Systems
+ * @brief Metric scale factors for non-Cartesian coordinates
+ *
+ * - axi.h — Axisymmetric coordinates
+ * - spherical.h — Spherical coordinates (lon/lat)
+ * - spherisym.h — Spherically symmetric (1D radial)
+ * - radial.h — Radial/cylindrical coordinates
+ */
