@@ -1,6 +1,8 @@
 # Basilisk CFD Documentation Generator
 
-API reference and literate documentation for [Basilisk](http://basilisk.fr), the adaptive Cartesian mesh PDE framework. Built from Basilisk's source code using Doxygen + custom tooling.
+This project is built on the excellent work of [Stéphane Popinet](http://basilisk.fr/sandbox/popinet/README) and the Basilisk contributors. [basilisk.fr](http://basilisk.fr) is already a very comprehensive documentation resource — the literate source, tutorials, test cases, and examples there are outstanding. This Doxygen API reference and literate site are meant to **complement** basilisk.fr by adding dependency graphs, struct relationships, cross-referenced source browsing, and a module compatibility matrix — things that are hard to provide in a wiki format.
+
+Built from Basilisk's source code using Doxygen + custom tooling.
 
 ## 🔗 Live Documentation
 
