@@ -131,6 +131,9 @@ p code { background: var(--code-bg); padding: 1px 4px; border-radius: 3px; font-
 """
 
 MATHJAX = """\
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script>
 MathJax = {
   tex: {
@@ -369,7 +372,7 @@ def code_to_html(code):
             return f'#include &quot;<a href="{BASILISK_URL}/{filename}">{html_mod.escape(filename)}</a>&quot;'
 
     escaped = re.sub(r'#include &quot;([^&]+)&quot;', include_link, escaped)
-    return f'<pre><code>{escaped}</code></pre>'
+    return f'<pre><code class="language-c">{escaped}</code></pre>'
 
 
 def file_to_doxygen_name(filepath):

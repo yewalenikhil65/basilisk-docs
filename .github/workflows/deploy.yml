@@ -1,12 +1,10 @@
 name: Build and Deploy Basilisk Docs
 
 on:
-  push:
-    branches: [main]
   schedule:
-    # Rebuild weekly (Monday 6am UTC) to pick up Basilisk updates
+    # Rebuild weekly (Monday 6am UTC) — ~4 builds/month
     - cron: '0 6 * * 1'
-  workflow_dispatch:  # manual trigger
+  workflow_dispatch:  # manual trigger from Actions tab
 
 permissions:
   contents: read
