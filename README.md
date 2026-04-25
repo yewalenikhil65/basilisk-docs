@@ -91,3 +91,5 @@ Re-run `./build_docs.sh` — it re-downloads the latest Basilisk tarball and reg
 ## License
 
 The documentation generator scripts are GPL v2+ licensed, matching [Basilisk's license](http://basilisk.fr/src/COPYING).
+
+© 2026 Nikhil Yewale. Licensed under GPL v2+.
