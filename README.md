@@ -2,6 +2,12 @@
 
 API reference and literate documentation for [Basilisk](http://basilisk.fr), the adaptive Cartesian mesh PDE framework. Built from Basilisk's source code using Doxygen + custom tooling.
 
+## 🔗 Live Documentation
+
+- **[Literate Documentation](https://yewalenikhil65.github.io/basilisk-docs/literate/)** — prose + code + equations, start here
+- **[API Reference (Doxygen)](https://yewalenikhil65.github.io/basilisk-docs/html/)** — struct hierarchies, dependency graphs, cross-referenced source
+- **[Compatibility Matrix](https://yewalenikhil65.github.io/basilisk-docs/literate/matrix.html)** — which modules work together
+
 ## What this provides (that basilisk.fr doesn't)
 
 - **Doxygen API Reference** — struct hierarchies, `#include` dependency graphs, collaboration diagrams, cross-referenced source browser, full-text search
